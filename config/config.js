@@ -17,6 +17,7 @@ module.exports = {
    */
   acronym: 'SCAM',
   defaultColor: 'light-gray',
+  onDemandOnly: true,
   /**
    * Description for this integration which is displayed in the Polarity integrations user interface
    *
