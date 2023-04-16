@@ -20,6 +20,10 @@ Your Scamalytics Organization or Account name
 
 API Key for the Scamalytics Fraud API
 
+### Minimum Fraud Score
+
+Minimum Fraud Score to be notified on, values range from 0-100. Defaults to 0.
+
 ### Baseline Investigation Threshold
 
 Minimum Fraud Score for an IP to be (0-100) for an "investigation threshold met" icon to be displayed in the summary tag. Setting this value to -1 turns off the threshold. Defaults to 100.

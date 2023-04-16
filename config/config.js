@@ -111,6 +111,15 @@ module.exports = {
       adminOnly: true
     },
     {
+      key: 'minScore',
+      name: 'Minimum Fraud Score',
+      description: 'Minimum Fraud Score to be notified on, values range from 0-100.  Defaults to 0.',
+      default: 0,
+      type: 'number',
+      userCanEdit: false,
+      adminOnly: true
+    },
+    {
       key: 'baselineInvestigationThreshold',
       name: 'Baseline Investigation Threshold',
       description:

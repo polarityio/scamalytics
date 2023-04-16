@@ -105,13 +105,20 @@ function doLookup(entities, options, cb) {
     }
 
     results.forEach((result) => {
-      lookupResults.push({
-        entity: result.entity,
-        data: {
-          summary: getSummaryTags(result.body, options),
-          details: result.body
-        }
-      });
+      if (result.body && result.body.score >= options.minScore) {
+        lookupResults.push({
+          entity: result.entity,
+          data: {
+            summary: getSummaryTags(result.body, options),
+            details: result.body
+          }
+        });
+      } else {
+        lookupResults.push({
+          entity: result.entity,
+          data: null
+        });
+      }
     });
 
     Logger.debug({ lookupResults }, 'Results');
@@ -124,7 +131,10 @@ function getSummaryTags(body, options) {
   const tags = [];
 
   if (typeof body.score !== 'undefined') {
-    if (body.score >= options.baselineInvestigationThreshold && options.baselineInvestigationThreshold !== -1) {
+    if (
+      body.score >= options.baselineInvestigationThreshold &&
+      options.baselineInvestigationThreshold !== -1
+    ) {
       tags.push({
         type: 'danger',
         text: `Risk: ${body.risk} (${body.score} / 100)`
