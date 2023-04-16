@@ -1,0 +1,78 @@
+{
+  "name": "Scamalytics",
+  "acronym": "SCAM",
+  "defaultColor": "light-gray",
+  "onDemandOnly": true,
+  "description": "View the Scamalytics fraud score for IP Addresses",
+  "entityTypes": [
+    "IPv4"
+  ],
+  "styles": [
+    "./styles/styles.less"
+  ],
+  "block": {
+    "component": {
+      "file": "./components/block.js"
+    },
+    "template": {
+      "file": "./templates/block.hbs"
+    }
+  },
+  "summary": {
+    "component": {
+      "file": "./components/summary.js"
+    },
+    "template": {
+      "file": "./templates/summary.hbs"
+    }
+  },
+  "request": {
+    "cert": "",
+    "key": "",
+    "passphrase": "",
+    "ca": "",
+    "proxy": "",
+    "rejectUnauthorized": true
+  },
+  "logging": {
+    "level": "info"
+  },
+  "options": [
+    {
+      "key": "orgName",
+      "name": "Scamalytics Organization or Account Name",
+      "description": "Your Scamalytics Organization or Account name",
+      "default": "",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "apiKey",
+      "name": "Scamalytics API Key",
+      "description": "API Key for the Scamalytics Fraud API",
+      "default": "",
+      "type": "password",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "minScore",
+      "name": "Minimum Fraud Score",
+      "description": "Minimum Fraud Score to be notified on, values range from 0-100.  Defaults to 0.",
+      "default": 0,
+      "type": "number",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "baselineInvestigationThreshold",
+      "name": "Baseline Investigation Threshold",
+      "description": "Minimum Fraud Score for an IP to be (0-100) for an \"investigation threshold met\" icon to be displayed in the summary tag.  Setting this value to -1 turns off the threshold. Defaults to 100.",
+      "default": 100,
+      "type": "number",
+      "userCanEdit": false,
+      "adminOnly": true
+    }
+  ]
+}
