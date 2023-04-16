@@ -6,7 +6,7 @@ Polarity's Scamalytics integration searches the Scamalytics Fraud API to display
 
 Please see [https://www.scamalytics.com/](https://www.scamalytics.com/) for more information.
 
-| ![image](assets/overlay.png)  |
+| ![image](images/overlay.png)  |
 |---|
 |*IP Example* |
 
